@@ -59,3 +59,9 @@ typings/
 
 # next.js build output
 .next
+
+# Configuration
+config.json
+config.*.json
+!config.example.json
+tests
