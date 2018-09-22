@@ -5,6 +5,12 @@ module.exports = class Client extends eris.Client {
   constructor (token = '', options = {}) {
     super(token, options.eris);
     this.Collection = eris.Collection;
+
+    if (options.eventManager) {
+      let EventManager = require('./EventManager');
+      this.eventManager = new EventManager(this, options.eventManager);
+      this.events = this.eventManager.events;
+    }
   }
 
   discover (directory) {

@@ -1,7 +1,11 @@
 const Client = require('./core').Client;
 const config = require('./config.json');
 
-let client = new Client(config.token);
+let client = new Client(config.token, {
+  eventManager: {
+    directories: config.eventManager.directories
+  }
+});
 
 client.connect();
 
