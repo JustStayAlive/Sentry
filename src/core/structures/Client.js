@@ -4,6 +4,7 @@ const recursive = require('recursive-readdir');
 module.exports = class Client extends eris.Client {
   constructor (token = '', options = {}) {
     super(token, options.eris);
+    this.Collection = eris.Collection;
   }
 
   discover (directory) {
