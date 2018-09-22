@@ -14,7 +14,7 @@ module.exports = class EventManager {
               let module = require(require.resolve(paths[i]));
 
               if (module.event) {
-                if (!module.event.id) throw new Error();
+                if (!module.event.id) throw new Error('Event requires an ID');
                 module.event.path = paths[i];
 
                 this.events.set(module.event.id, module.event);
