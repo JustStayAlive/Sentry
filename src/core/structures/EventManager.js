@@ -14,16 +14,16 @@ module.exports = class EventManager {
               let module = require(require.resolve(paths[i]));
 
               if (module.event) {
-                if (!module.event.id) throw new Error('Event requires an ID');
+                if (!module.event.id) return client.emit('eventFail', new Error('Event requires an ID'), paths[i]);
                 module.event.path = paths[i];
 
-                this.events.set(module.event.id, module.event);
+                this.events.set(module.event.id, new Event(module.event));
                 if (module.event.type === 'on') this.client.on(module.event.id, module.event.execute);
                 else if (module.event.type === 'once') this.client.once(module.event.id, module.event.execute);
                 client.emit('eventLoad', module.event);
               }
             } catch (err) {
-              console.log(err);
+              client.emit('eventFail', err, paths[i]);
             }
           }
         }).catch(err => console.log(err));
