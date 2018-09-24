@@ -17,6 +17,10 @@ client.on('commandLoad', (command) => {
   console.log(`Loaded command ${command.id}.`);
 });
 
+client.on('commandUnload', (command) => {
+  console.log(`Unloaded command ${command.id}.`);
+});
+
 client.on('commandFail', (err, path) => {
   console.log(`Failed to load a command at ${path}`);
   console.log(err.stack);
