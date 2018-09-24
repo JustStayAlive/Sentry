@@ -1,5 +1,9 @@
 {
   "token": "",
+  "commandManager": {
+    "directories": [],
+    "prefix": ["sentry\\s"]
+  },
   "eventManager": {
     "directories": []
   }

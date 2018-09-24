@@ -6,6 +6,12 @@ module.exports = class Client extends eris.Client {
     super(token, options.eris);
     this.Collection = eris.Collection;
 
+    if (options.commandManager) {
+      let CommandManager = require('./CommandManager');
+      this.commandManager = new CommandManager(this, options.commandManager);
+      this.commands = this.commandManager.commands;
+    }
+
     if (options.eventManager) {
       let EventManager = require('./EventManager');
       this.eventManager = new EventManager(this, options.eventManager);
