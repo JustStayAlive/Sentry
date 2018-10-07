@@ -14,9 +14,6 @@ module.exports = {
         embed: {
           color: 12335146,
           title: response.embeds[0].title,
-          thumbnail: {
-            url: client.user.avatarURL
-          },
           fields: [
             {
               name: 'Latency',
