@@ -36,3 +36,4 @@ client.on('eventFail', (err, path) => {
 });
 
 module.exports = client;
+module.exports.config = config;

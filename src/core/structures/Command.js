@@ -7,5 +7,7 @@ module.exports = class Command {
     this.id = command.id;
     this.trigger = command.trigger;
     this.execute = command.execute;
+
+    this.permission = command.permission || [];
   }
 };
