@@ -1,8 +1,9 @@
 {
   "token": "",
+  "developers": [""],
   "commandManager": {
     "directories": [],
-    "prefix": ["sentry\\s"]
+    "prefix": [""]
   },
   "eventManager": {
     "directories": []
